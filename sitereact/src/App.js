@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Logo from '../../imagens/RocketChat.png'
+import { Switch, Route } from 'react-router-dom'
+import PaginaInicial from './paginas/PaginaInicial'
+import Contato from './paginas/Contato'
+import Chat from './paginas/Chat'
+import Nav from './componentes/Nav'
 
-function App() {
+import './App.css'
+
+function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Nav />
+    <Switch>
+        <Route exact path='/' component={PaginaInicial} />
+        <Route path='/contato' component={Contato} />
+        <Route path='/chat' component={Chat} />
+    </Switch>
     </div>
-  );
+  )
 }
-
 export default App;
